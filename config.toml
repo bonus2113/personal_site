@@ -43,7 +43,7 @@ googleAnalytics = ""
     [[params.about.education]]
       course = "BSc in Computer Science"
       institution = "RWTH Aachen University"
-      year = "2014 - now"
+      year = "2014 - 2017 (expected)"
 
     [[params.about.education]]
       course = "Abitur"
