@@ -1,4 +1,4 @@
-baseurl = "//daseyb.draco.uberspace.de//" 
+baseurl = "//localhost:65132/" # "//daseyb.draco.uberspace.de//" 
 title = "Pretty Pixels"
 copyright = "&copy; 2016 Dario Seyb"
 languageCode = "en-us"
@@ -128,21 +128,16 @@ googleAnalytics = "UA-36574384-2"
   weight = 1
 
 [[menu.main]]
-  name = "Projects"
-  url = "#projects"
+  name = "Posts"
+  url = "#posts"
   weight = 2
 
 [[menu.main]]
-  name = "Posts"
-  url = "#posts"
+  name = "Projects"
+  url = "#projects"
   weight = 3
-
-[[menu.main]]
-  name = "Publications"
-  url = "#publications"
-  weight = 4
 
 [[menu.main]]
   name = "Contact"
   url = "#contact"
-  weight = 5
+  weight = 4
