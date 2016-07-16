@@ -1,8 +1,8 @@
-baseurl = "http://localhost:8100/"
+baseurl = "//daseyb.draco.uberspace.de/" 
 title = "Pretty Pixels"
 copyright = "&copy; 2016 Dario Seyb"
 languageCode = "en-us"
-theme = "academic"
+theme = "hugo-academic"
 
 # Enable comments by entering your Disqus shortname
 disqusShortname = "spf13"
