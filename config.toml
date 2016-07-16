@@ -8,7 +8,7 @@ theme = "hugo-academic"
 disqusShortname = "spf13"
 
 # Enable analytics by entering your Google Analytics tracking ID
-googleAnalytics = ""
+googleAnalytics = "UA-36574384-2"
 
 [params]
   name = "Dario Seyb"
