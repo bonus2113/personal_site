@@ -7,7 +7,7 @@
   "weight": "0"
 }
 
-# Biography
+# About Me
 I am a software engineer interested in computer graphics, physically based rendering and real time graphics.
 Currently I am studying computer science at RWTH Aachen and am employed as a student research assistant at the [Visual Computing Institute](//graphics.rwth-aachen.de) where I work on software for laser cutting.
 

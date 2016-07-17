@@ -21,7 +21,7 @@ Since then I spent quite a bit of time on it, adding new features, optimizing, e
 
 ### Pipeline overview
 
-{{< figure src="http://i.imgur.com/UXNuBhh.png" caption="The complete pipeline" >}}
+{{< figure src="//i.imgur.com/UXNuBhh.png" caption="The complete pipeline" >}}
 
 ### Lighting modes
 For the longest time there was only one lighting mode, the "effect" one. Two weeks ago Blair asked for lights, which would allow him to color in bigger parts of the level, without standing out too much.
@@ -304,6 +304,6 @@ float4 main(float2 TexCoord : TEXCOORD0) : COLOR0
 
 ### Conclusion
 I hope you were able to get something out of this post. I think it's a neat way to do things. Extensions like shadows, or normal mapping are easy to integrate and it performs quite well. 
-Thanks to soolstyle for [this article](http://www.soolstyle.com/2010/02/15/2d-deferred-lightning/), which inspired me to start this!
+Thanks to soolstyle for [this article](//www.soolstyle.com/2010/02/15/2d-deferred-lightning/), which inspired me to start this!
 
 And that's it! If you have any questions, feel free to ask!
