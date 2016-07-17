@@ -20,6 +20,7 @@ googleAnalytics = "UA-36574384-2"
   email = "dario.seyb@rwth-aachen.de"
   address = "Aachen, Germany."
   phone = "+491601634577"
+  image = "projects/zaphod.png"
 
   # Date format (refer to Go's date format: http://flippinggodateformat.com )
   #   Examples: "Mon, Jan 2, 2006" or "2006-01-02"
