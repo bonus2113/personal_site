@@ -6,6 +6,7 @@ image_preview = "projects/spaceteam.png"
 summary = "Space Team is a mobile game in which you have to take care of a miniature planet. Your task is it to keep the inhabitants of your planets happy."
 tags = ["game", "unity3d"]
 title = "Space Team: Pocket Planets"
+selected = true
 external_link = ""
 +++
 

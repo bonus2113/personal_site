@@ -6,6 +6,7 @@ image_preview = "projects/spinwars.jpg"
 summary = "SPiN WARS is a fun party game for 2 – 4 players. It can be played on mobile platforms as well as on PC, Mac and Linux."
 tags = ["game", "mobile"]
 title = "SPiN WARS"
+selected = true
 external_link = "http://spinwars.brightside-games.com/"
 +++
 

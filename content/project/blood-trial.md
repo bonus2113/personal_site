@@ -6,6 +6,7 @@ image_preview = "projects/bloodtrial.png"
 summary = "A 2D one-screen brawler, somewhat in the style of Super Smash Bros. 2 – 4 player fight in an arena style setting to win the favor of the gods. "
 tags = ["game jam"]
 title = "Blood Trial"
+selected = true
 external_link = "http://2013.globalgamejam.org/2013/blood-trial"
 +++
 

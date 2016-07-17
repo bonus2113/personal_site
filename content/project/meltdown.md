@@ -6,6 +6,7 @@ image_preview = "projects/meltdown.png"
 summary = "Meltdown is a mobile game for Android in which you have to guide the alcoholic polar bear Gus through the melting arctic."
 tags = ["game", "unity3d", "mobile"]
 title = "Meltdown"
+selected = "true"
 external_link = "http://newiceagenow.weebly.com/"
 +++
 

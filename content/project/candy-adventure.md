@@ -6,6 +6,7 @@ image_preview = "projects/candy.png"
 summary = "Candy Adventure is a short 3D adventure game made for the Candy Jam in six days."
 tags = ["game jam"]
 title = "Candy Adventure"
+selected = true
 external_link = "https://zzepgames.itch.io/candy-adventure"
 +++
 

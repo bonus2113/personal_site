@@ -1,4 +1,4 @@
-baseurl = "//localhost:65132/" # "//daseyb.draco.uberspace.de//" 
+baseurl = "//daseyb.draco.uberspace.de/" # "//localhost:65132/" # 
 title = "Pretty Pixels"
 copyright = "&copy; 2016 Dario Seyb"
 languageCode = "en-us"
@@ -13,6 +13,7 @@ googleAnalytics = "UA-36574384-2"
 [params]
   name = "Dario Seyb"
   role = "Undergraduate Student"
+  description = "Making Pretty Pictures with Math"
   organization = "RWTH Aachen University"
   avatar = "profile.png"
   email = "dario.seyb@rwth-aachen.de"
@@ -53,8 +54,10 @@ googleAnalytics = "UA-36574384-2"
   # Projects section.
   # Section will only be displayed if there are projects in `content/project/`.
   [params.projects]
-    title = "Projects"
+    count = 5
+    title = "Selected Projects"
     subtitle = ""
+    str_all = "View All"
 
   # Selected Publications section.
   # Section will only be displayed if there are publications with `selected = true` in their `+++` preamble.
@@ -78,7 +81,7 @@ googleAnalytics = "UA-36574384-2"
     count = 3
     title = "Recent Posts"
     subtitle = ""
-    str_all = "More Posts"
+    str_all = "View All"
     str_read_more = "Read more"
 
   # Contact section.

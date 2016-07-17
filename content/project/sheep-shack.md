@@ -6,6 +6,7 @@ image_preview = "projects/sheepshack.jpg"
 summary = "Sheep Shack is the latest action puzzle game that combines an innovative puzzle mix with adorable characters, resulting in addictive gameplay for all ages. Your new, adorable sheep friends need your help! Feed them, shear them and kill the angry wolves."
 tags = ["game", "mobile"]
 title = "Sheep Shack"
+selected = true
 external_link = "http://sheepshack.brightside-games.com/"
 +++
 

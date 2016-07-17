@@ -6,6 +6,7 @@ image_preview = "projects/schubsma.jpg"
 summary = "A game jame game about motherhood. Made for the show \"Pixelmacher\" of the German TV channel \"ZDF Kultur\""
 tags = ["game jam"]
 title = "Schubsma"
+selected = true
 external_link = "http://schubsma.blogspot.de/"
 +++
 

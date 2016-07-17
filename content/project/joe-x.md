@@ -6,6 +6,7 @@ image_preview = "projects/joex.png"
 summary = "Joe X is a 2D arcade spectacle fighter."
 tags = ["game", "unity3d"]
 title = "Joe X"
+selected = "true"
 external_link = "https://zzepgames.itch.io/joe-x"
 +++
 
