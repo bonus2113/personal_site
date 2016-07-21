@@ -88,7 +88,7 @@ googleAnalytics = "UA-36574384-2"
 
   # Contact section.
   [params.contact]
-    enable = true
+    enable = false
     title = "Contact"
     subtitle = ""
     autolink = true  # Automatically link email and phone?
@@ -142,7 +142,7 @@ googleAnalytics = "UA-36574384-2"
   url = "#projects"
   weight = 3
 
-[[menu.main]]
-  name = "Contact"
-  url = "#contact"
-  weight = 4
+
+
+
+
