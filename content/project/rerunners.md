@@ -20,6 +20,7 @@ Run, jump, and use devious weapons to become the fastest Runner of all time! Com
 Embark on an outlandish tale of good and evil, Tortoise and Hare, and fight your way towards the Race of the World, the greatest race in history! The fate of the universe rests between your thumbs!
 
 FEATURES
+
 * Compete in action-packed, explosive multiplayer races!
 * Run against your friends and other players around the world!
 * Battle your way to victory with jetpacks, bombs, and hilariously vicious power-ups!

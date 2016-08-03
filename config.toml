@@ -1,4 +1,4 @@
-baseurl = "//darioseyb.com/" # "//localhost:65132/" # 
+baseurl = "/" # 
 
 title = "Pretty Pixels"
 copyright = "&copy; 2016 Dario Seyb"
@@ -21,6 +21,7 @@ googleAnalytics = "UA-36574384-2"
   address = "Aachen, Germany."
   phone = "+491601634577"
   image = "projects/zaphod.png"
+  twitterHandle = "@daseyb"
 
   # Date format (refer to Go's date format: http://flippinggodateformat.com )
   #   Examples: "Mon, Jan 2, 2006" or "2006-01-02"
@@ -52,6 +53,7 @@ googleAnalytics = "UA-36574384-2"
       course = "Abitur"
       institution = "Leibniz Oberschule"
       year = 2013
+      thesis = "Realtime Simulation of Rigidbodies in Two Dimensional Space"
 
   # Projects section.
   # Section will only be displayed if there are projects in `content/project/`.
@@ -86,6 +88,14 @@ googleAnalytics = "UA-36574384-2"
     str_all = "View All"
     str_read_more = "Read more"
 
+  # Gallery section.
+  # Section will only be displayed if there are posts in `content/gallery/`.
+  [params.gallery]
+    count = 6
+    title = "Gallery"
+    subtitle = ""
+    str_all = "View All"
+
   # Contact section.
   [params.contact]
     enable = false
@@ -110,6 +120,11 @@ googleAnalytics = "UA-36574384-2"
     link = "mailto:dario.seyb@rwth-aachen.de"
 
   [[params.social]]
+    icon = "tumblr"
+    icon_pack = "fa"
+    link = "//daseyb.tumblr.com"
+
+  [[params.social]]
     icon = "twitter"
     icon_pack = "fa"
     link = "//twitter.com/daseyb"
@@ -120,9 +135,9 @@ googleAnalytics = "UA-36574384-2"
     link = "//github.com/daseyb"
 
   [[params.social]]
-    icon = "tumblr"
+    icon = "linkedin"
     icon_pack = "fa"
-    link = "//daseyb.tumblr.com"
+    link = "//de.linkedin.com/in/darioseyb"
 
 # Navigation Links
 #   The weight parameter defines the order that the links will appear in.
