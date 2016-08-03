@@ -4,7 +4,7 @@
   "external_link": "http://www.indiedb.com/games/specter",
   "image": "projects/specter.jpg",
   "image_preview": "projects/specter.jpg",
-  "selected": "\"true\"",
+  "selected": "true",
   "summary": "Specter is a singleplayer action platformer with puzzle elements. Think Mario meets Castlevania.",
   "tags": [
     "game"

@@ -6,7 +6,7 @@
   "image": "projects/rerunners.png",
   "image_preview": "projects/rerunners.png",
   "math": false,
-  "selected": true,
+  "selected": "true",
   "summary": "Run, jump, and use devious weapons to become the fastest Runner of all time! Compete in breakneck, multiplayer races against friends and other people you don’t care about!",
   "tags": [
     "game dev",
