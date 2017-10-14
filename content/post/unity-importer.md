@@ -6,25 +6,29 @@ tags = ["unity", "animvr", "game dev"]
 title = "Unity ScriptedImporters and the Timeline API"
 +++
 
-Unitys editor scripting is part of what makes the engine so attractive. Writing tools that directly interact with the rest of your game code is powerful and can make a large difference in the productivity of teams of all sizes. It also leads to a healthy landscape of third party integrations. In this article I will describe how two new Unity APIs allowed us to create a well integrated Unity toolkit for AnimVR and go through issues you might run into.
+## Overview
+
+[Unity](https://unity3d.com)'s editor scripting is part of what makes the engine so attractive. Writing tools that directly interact with the rest of your game code is powerful and can make a large difference in the productivity of teams of all sizes. It also leads to a healthy landscape of third party integrations. In this post I will describe how two new Unity APIs allowed us to create a well integrated Unity toolkit for AnimVR and go through issues you might run into. Below is a video showcasing our integration:
 
 {{< youtube CATU3e8qAv0 >}}
 
+> The Unity package is available over here: [unity.nvrmind.io](http://unity.nvrmind.io/)
+
 ## A little Background
-I have been working on the VR drawing and animation program [AnimVR](https://nvrmind.io) for a while now. We are building it in Unity for a variety of reasons that I don't want to get into now, but one of our main goals is to support import and export from and to a variety of interchange formats. So far the main way to export content from AnimVR is to use the [Alembic Cache](http://www.alembic.io/) format which is very popular in feature film pipelines but barely used in the game industry.
+We have been working on the VR drawing and animation tool [AnimVR](https://nvrmind.io/#animvr) for about a year. We are building it in Unity for a variety of reasons that I don't want to get into now, but one of our main goals is to support import and export from and to a variety of interchange formats. So far the main way to export content from AnimVR is to use the [Alembic Cache](http://www.alembic.io/) format which is very popular in feature film pipelines but barely used in the game industry.
 
-We've also been teasing a [Unity](https://unity3d.com) toolkit for ages. A prototype existed when we released the first beta version and at the time we thought it wouldn't take us long to release that to the public. Unfortunately it turned out that back then we would have needed to include a lot of custom runtime code to make playback of AnimVR stages work in Unity. Getting any kind of consistent timing outside of playmode is cumbersome as most who've worked with Unity editor code will know. Additionally this would have been code we would have to maintain and update alongside changes to the main AnimVR application, slowing us down in a phase where we wanted to be able to react to feedback quickly.
+We've also been teasing a Unity toolkit for ages. A prototype existed when we released the first beta version and at the time we thought it wouldn't take us long to release it to the public. Unfortunately it turned out that back then we would have needed to include a lot of custom runtime code to make playback of AnimVR stages work in Unity. Getting any kind of consistent timing outside of playmode is cumbersome as most who've worked with Unity editor code will know. Additionally this would have been code we would have had to maintain and update alongside the main AnimVR application, slowing us down in a phase where we wanted to be able to react to feedback quickly.
 
-A second concern of mine was that I believe third party importers should adapt to the concepts of the *target* application (Unity, in this case) rather than the *source* (AnimVR). This way imported assets can be used in all the ways natively supported assets can be. I want to enable people to build Unity projects where the content happens to be made in AnimVR, rather than AnimVR projects in Unity. 
+A second concern of mine was that I believe third party importers should adapt to the concepts of the *target* application (Unity, in this case) rather than the *source* (AnimVR). This way imported assets can be used in all the ways natively supported assets can be. I want to enable people to build Unity projects where the content happens to be made in AnimVR, rather than "view" AnimVR projects in Unity. 
 
-We decided to not release that version of the Unity toolkit and wait until we had a better concept of how we wanted to reach that goal. So, what made it possible for us to release the current toolkit?
+We decided to not release that version of the Unity toolkit and wait until we had a better idea on how to reach that goal. So, what made it possible for us to release the current toolkit?
 
 ### [ScriptedImporters](https://docs.unity3d.com/ScriptReference/Experimental.AssetImporters.ScriptedImporter.html)
-Previously the only thing we had to work with regarding asset import were [AssetPostprocessors](https://docs.unity3d.com/ScriptReference/AssetPostprocessor.html), but those have major drawbacks that prevent a tight integration. With an AssetPostprocessor you can run code whenever Unity detects a file with a certain extension. This allows you to create new assets based on your custom files. Unfortunately there is no way to associate those newly creates assets with the source file, meaning that you double the number of assets you have to manage. As far as Unity was concerned .stage files from AnimVR where random text files with nothing meaningful in them. It also leads to worse UX, since there is a difference in how you work with natively support file types (like meshes, textures and audio) and custom file types.
+Previously the only thing we had to work with regarding asset import were [AssetPostprocessors](https://docs.unity3d.com/ScriptReference/AssetPostprocessor.html), but those have major drawbacks that prevent a tight integration. With an AssetPostprocessor you can run code whenever Unity detects a file with a certain extension. This allows you to create new assets based on your custom files. Unfortunately there is no way to associate those newly created assets with the source file, meaning that you double the number of assets you have to manage. As far as Unity was concerned .stage files from AnimVR where random binary files with nothing meaningful in them. It also leads to worse UX, since there is a difference in how you work with natively support file types (like meshes, textures and audio) and custom file types.
 
-Since Unity 2017.1 there is a way to handle all of that better and actually build importers that have the same UX as the native ones. Creating a custom ScriptedImporter allows you to associate assets with a file on disk. Whenever the file is updated the old assets are automatically discarded and recreated and deleting the file also deletes all associated assets. You can even add a custom editor for your file type that allows users to edit import settings in a familiar way. This makes support for custom file types a lot cleaner.
+Since Unity 2017.1 there is a way to handle all of that better and actually build importers that have the same UX as the native ones. Creating a custom ScriptedImporter allows you to associate assets with a file on disk. Whenever the file is updated the old assets are automatically discarded and recreated and deleting the file also deletes all associated assets. You can even add a custom editor for your file type that allows users to edit import settings in a familiar way. This makes support for custom files a lot cleaner.
 
-The whole API is still working well, but marked as experimental. I'll describe a few pitfalls that you need to watch out for in the implementation section of this article.
+The whole API is working well, but still marked as experimental. I'll describe a few pitfalls that you need to watch out for in the implementation section of this post.
 
 {{< figure src="/img/unity-importer/scripted_importer.png" title="The inspector of our ScriptedImporter" >}}
 
@@ -37,13 +41,13 @@ This maps very nicely to our AnimVR stages. They consist of a number of layers (
 
 ## Implementation
 ### Loading the Data from Disk
-When an asset with the right extension is imported Unity calls `OnImportAsset(AssetImportContext ctx)` on your `ScriptedImporter`. `AssetImportContext` contains all the necessary information to find the relevant file on disk and read it. In our case we use the same deserialization method as in standalone AnimVR which should make it easy to keep compatibility between the Unity toolkit and the main application.
+When an asset with the right extension is imported Unity calls `OnImportAsset(AssetImportContext ctx)` on your `ScriptedImporter`. The `AssetImportContext` contains all the necessary information to find the relevant file on disk and read it. In our case we use the same deserialization method as in standalone AnimVR which should make it easy to keep compatibility between the Unity toolkit and the main application.
 
 ### Creating Assets from Script
 While working with the Timeline API you will notice that it is fairly unintuitive to use from code. This is partly due to the fact that there is little documentation and few "real world" examples and partly because many settings are private variables that only get exposed in the UI. So far I've managed to keep afloat by decompiling the Timeline related code that comes with Unity and then using reflection to access the variables I need, which is par of the course for any Unity editor scripting.
 
 #### A PlayableDirector
-Any object that wants to play back a Timeline needs a `PlayableDirector` component. The `PlayableDirector` provides the adapter between the `TimelineAsset` that can't reference any objects in the scene and the scene objects that are controlled with the Timeline. It's are regular component and you can simply created it like this:
+Any object that wants to play back a Timeline needs a `PlayableDirector` component. The `PlayableDirector` provides the adapter between the `TimelineAsset` that can't reference any objects in the scene and the scene objects that are controlled with the Timeline. It's a regular component and you can simply created it like this:
 
 {{< highlight csharp >}}
 director = stageObj.AddComponent<PlayableDirector>();
