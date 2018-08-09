@@ -1,10 +1,26 @@
-+++
-date = "2017-10-12T18:43:08+02:00"
-image = "unity-importer/citypicture.PNG"
-math = false
-tags = ["unity", "animvr", "game dev"]
-title = "Unity ScriptedImporters and the Timeline API"
-+++
+{
+  "Image_preview": "pathgraph.png",
+  "Tags": [
+    "research"
+  ],
+  "client_name": "",
+  "date": "2017-10-12T18:43:00",
+  "draft": false,
+  "external_link": "https://darioseyb.com/pathgraph",
+  "image": "unity-importer/citypicture.PNG",
+  "image_preview": "pathgraph.png",
+  "math": false,
+  "section_id": "0",
+  "selected": true,
+  "summary": "Pretty visualizations for ray tracing algorithms.",
+  "tags": [
+    "animvr",
+    "game dev",
+    "unity"
+  ],
+  "title": "Unity ScriptedImporters and the Timeline API",
+  "weight": "0"
+}
 
 ## Overview
 
