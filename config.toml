@@ -1,7 +1,7 @@
 baseurl = "//darioseyb.com/" # 
 
 title = "Pretty Pixels"
-copyright = "&copy; 2016 Dario Seyb"
+copyright = "&copy; 2018 Dario Seyb"
 languageCode = "en-us"
 theme = "hugo-academic"
 
@@ -13,12 +13,12 @@ googleAnalytics = "UA-36574384-2"
 
 [params]
   name = "Dario Seyb"
-  role = "Undergraduate Student"
+  role = "PhD Student"
   description = "Making Pretty Pictures with Math"
-  organization = "RWTH Aachen University"
+  organization = "Dartmouth College"
   avatar = "profile.png"
-  email = "dario.seyb@rwth-aachen.de"
-  address = "Aachen, Germany."
+  email = "Dario.R.Seyb.GR@dartmouth.edu"
+  address = "Hanover, NH, US."
   phone = "+491601634577"
   image = "projects/zaphod.png"
   twitterHandle = "@daseyb"
@@ -43,11 +43,17 @@ googleAnalytics = "UA-36574384-2"
     interests = ["Computer Graphics", "Game Development", "Realtime Rendering"]
     str_interests = "Interests"
     str_education = "Education"
+ 
+    [[params.about.education]]
+      course = "PhD in Computer Science"
+      institution = "Dartmouth College"
+      year = "2018 - present"
 
     [[params.about.education]]
       course = "BSc in Computer Science"
       institution = "RWTH Aachen University"
-      year = "2014 - 2017 (expected)"
+      year = "2014 - 2018"
+      thesis = "A Multi-layered Approach to Embedded Mesh Deformation"
 
     [[params.about.education]]
       course = "Abitur"
@@ -117,12 +123,7 @@ googleAnalytics = "UA-36574384-2"
   [[params.social]]
     icon = "envelope"
     icon_pack = "fa"
-    link = "mailto:dario.seyb@rwth-aachen.de"
-
-  [[params.social]]
-    icon = "tumblr"
-    icon_pack = "fa"
-    link = "//daseyb.tumblr.com"
+    link = "mailto:Dario.R.Seyb.GR@dartmouth.edu"
 
   [[params.social]]
     icon = "twitter"
