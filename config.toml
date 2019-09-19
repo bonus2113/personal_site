@@ -1,7 +1,7 @@
 baseurl = "//darioseyb.com/" # 
 
 title = "Pretty Pixels"
-copyright = "&copy; 2018 Dario Seyb"
+copyright = "&copy; 2019 Dario Seyb"
 languageCode = "en-us"
 theme = "hugo-academic"
 
@@ -80,7 +80,7 @@ googleAnalytics = "UA-36574384-2"
   # Section will only be displayed if there are publications in `content/publication/`.
   [params.publications]
     count = 10
-    detailed_list = false
+    detailed_list = true
     title = "Recent Publications"
     subtitle = ""
     str_all = "More Publications"
@@ -151,6 +151,11 @@ googleAnalytics = "UA-36574384-2"
 [[menu.main]]
   name = "Gallery"
   url = "#gallery"
+  weight = 2
+  
+[[menu.main]]
+  name = "Publications"
+  url = "#publications"
   weight = 2
 
 [[menu.main]]
