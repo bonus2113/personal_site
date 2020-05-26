@@ -8,19 +8,22 @@
     "Wojciech Jarosz"
   ],
   "date": "2019-11-24T00:00:00",
+  "draft": false,
   "image": "seyb19nonlinear-teaser.jpg",
   "image_preview": "seyb19nonlinear-teaser.jpg",
   "math": true,
   "publication": "ACM Transactions on Graphics (Proceedings of SIGGRAPH Asia)",
   "publication_short": "ACM TOG",
   "selected": false,
+  "subtitle": "Dartmouth Rendering Competition 2019: Winning Image",
   "title": "Non-linear sphere tracing for rendering deformed signed distance fields",
   "url_code": "",
   "url_dataset": "",
   "url_pdf": "https://cs.dartmouth.edu/~wjarosz/publications/seyb19nonlinear.pdf",
-  "url_project": "",
+  "url_project": "https://cs.dartmouth.edu/~wjarosz/publications/seyb19nonlinear.html",
   "url_slides": "",
-  "url_video": "https://cs.dartmouth.edu/~wjarosz/publications/seyb19nonlinear.mp4"
+  "url_video": "https://cs.dartmouth.edu/~wjarosz/publications/seyb19nonlinear.mp4",
+  "video": ""
 }
 
 
